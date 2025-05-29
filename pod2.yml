@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: prathik
+
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: prathik-quota
+  namespace: prathik
+spec:
+  hard:
+    cpu: '1'
+    memory: '1Gi'
+    pods: '4'
+    service: '3'
