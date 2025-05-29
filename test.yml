@@ -1,0 +1,10 @@
+# apiVersion: v1
+# kind: Pod #k8 object
+# metadata:
+#   name: newapp
+# spec:
+#   containers:
+#     - name: newapp
+#       image: prathikmr/newapp
+#       ports:
+#         - containerPort:80

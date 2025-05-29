@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-declarative-way
+  labels:
+    app: myapp
+spec:
+  containers:
+    - name: myapp
+      image: nginx
+      ports:
+        - containerPort: 80
