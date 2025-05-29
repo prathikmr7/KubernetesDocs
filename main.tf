@@ -18,6 +18,11 @@ resource "aws_instance" "admin" {
   tags = {
     Name ="Admin-Server"
   }
+  user_data = <<-EOF
+  #!/bin/bash
+  sudo snap install microk8s --classic
+  alias kubectl='microk8s kubectl'
+  EOF
 }
 
 output "PublicIP" {
