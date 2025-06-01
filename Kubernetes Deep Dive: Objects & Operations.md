@@ -9,7 +9,7 @@ Welcome to this repository, where we explore fundamental Kubernetes concepts, fr
 
 This section covers the installation and basic setup of MicroK8s, a lightweight Kubernetes distribution.
 
-### MicroK8s Installation [cite: 82]
+### MicroK8s Installation
 
 MicroK8s is designed for Ubuntu systems and can be easily installed using `snap`. 
 
@@ -23,12 +23,12 @@ After installation, you can verify its status:
 microk8s status
 ```
 
-### Enabling Addons [cite: 83, 87, 88, 89]
+### Enabling Addons 
 
 MicroK8s allows enabling various addons for extended functionality, such as DNS, Helm, Dashboard, and more.
  
 
-### Setting up `kubectl` Alias [cite: 91, 92]
+### Setting up `kubectl` Alias 
 
 To simplify `kubectl` commands, you can create an alias: 
 
@@ -52,11 +52,11 @@ kubectl get pods -n kube-system
 
 ## 📦 Kubernetes Pods: The Basics
 
-Pods are the smallest deployable units in Kubernetes, encapsulating one or more containers (usually one). [cite: 96] They share the same IP address, ports, and can share storage volumes.
+Pods are the smallest deployable units in Kubernetes, encapsulating one or more containers (usually one). [ : 96] They share the same IP address, ports, and can share storage volumes.
 
  
 
-### Pod Creation Ways [cite: 101]
+### Pod Creation Ways 
 
 There are two primary ways to create Pods:
 
@@ -107,7 +107,7 @@ spec:
         - containerPort: 80
 ```
 
-Apply the YAML file: [cite: 118]
+Apply the YAML file: 
 
 ```bash
 kubectl apply -f pod.yml
@@ -127,7 +127,7 @@ kubectl get pods
 
 You can get more information about Pod fields using `kubectl explain pod`. 
 
-Metadata names should be given exactly two spaces for proper parsing. [cite: 201] The name inside the container is the container name, while the name inside metadata is the Pod name.
+Metadata names should be given exactly two spaces for proper parsing.  The name inside the container is the container name, while the name inside metadata is the Pod name.
 
 
 Official Kubernetes Pods documentation: [Using Pods](https://kubernetes.io/docs/concepts/workloads/pods/) 
@@ -142,7 +142,7 @@ Pods can also be defined in JSON format.
 Pods handle application instances. If traffic increases, you need to increase the number of Pods to handle the load; otherwise, a single Pod might get killed. 
 
 
-The `kube-proxy` component is responsible for distributing traffic equally among Pods.To have multiple Pods with the same configuration, you enable `REPLICAS` using a `ReplicaSet`. [cite: 139, 214]
+The `kube-proxy` component is responsible for distributing traffic equally among Pods.To have multiple Pods with the same configuration, you enable `REPLICAS` using a `ReplicaSet`.
 
 Official Kubernetes ReplicaSet documentation: [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
 
@@ -196,6 +196,6 @@ Creating a new `rs.yaml` file:
 
 Once created, you can see the ReplicaSet: 
 
-If a replica pod is deleted, it will automatically be re-created by the Control Manager, which is responsible for maintaining the replica set. [cite: 150]
+If a replica pod is deleted, it will automatically be re-created by the Control Manager, which is responsible for maintaining the replica set.
 
 -----
